@@ -20,6 +20,7 @@ pipeline {
 						
 							steps {
 									sh " yum install git"
+								        sh 'echo "My new path"'
 									
 							}
 						
