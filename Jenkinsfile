@@ -10,7 +10,7 @@ pipeline {
 						stage ("one") {
 						
 							steps {
-									sh "sudo yum install httpd -y"
+									sh "yum install httpd -y"
 									
 							}
 						
@@ -19,12 +19,7 @@ pipeline {
 						stage ("two") {
 						
 							steps {
-									service start httpd
-                                                                        cd /var/www/html/
-                                                                        rm -rf *
-                                                                        echo "Running Jenking Pipeline using SCM">>/var/www/html/index.html
-                                                                        chmod -R 777 /var/www/html/
-                                                                        echo "Build job successfually :)"
+									sh " yum install git"
 									
 							}
 						
