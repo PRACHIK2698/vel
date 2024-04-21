@@ -19,9 +19,12 @@ pipeline {
 						stage ("two") {
 						
 							steps {
-									sh "sudo service httpd start"
-									sh "sudo cp -r index.html /var/www/html/"
-									sh "sudo chmod -R 777 /var/www/html/"
+									service start httpd
+                                                                        cd /var/www/html/
+                                                                        rm -rf *
+                                                                        echo "Running Jenking Pipeline using SCM">>/var/www/html/index.html
+                                                                        chmod -R 777 /var/www/html/
+                                                                        echo "Build job successfually :)"
 									
 							}
 						
